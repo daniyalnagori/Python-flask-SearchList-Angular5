@@ -1,0 +1,19 @@
+
+<h1>Search List</h1>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+    <input type="text" [formControl]="myForm.controls['name']">
+    <input type="submit" value="Search">
+</form>
+
+<h1 *ngIf="searchRes">
+    Result: {{searchRes}}
+</h1>
+
+<table>
+    <tr *ngFor="let lang of dataArr">
+        <td>
+            {{lang.name}}
+        </td>
+    </tr>
+</table>
